@@ -249,14 +249,20 @@ return [
             'text'        => 'Meus usuários',
             'url'         => 'painel/users',
             'icon'        => 'far fa-fw fa-file',
-            'can'         =>  'edit-users'  
+            'can'         =>  'edit-users',  
         ],
         ['header' => 'account_settings'],
         [
-            'text' => 'profile',
-            'url'  => 'admin/settings',
-            'icon' => 'fas fa-fw fa-user',
+            'text'        =>'Configurações',
+            'url'         =>'painel/settings',
+            'icon'        =>'fas fa-fw fa-file'
         ],
+        [
+            'text'        =>'Meu Perfil',
+            'url'         =>'painel/profile',
+            'icon'        =>'fas fa-fw fa-user'
+        ]
+    
         
     ],
 
