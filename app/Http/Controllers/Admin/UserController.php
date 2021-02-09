@@ -109,23 +109,21 @@ class UserController extends Controller
      */
     public function update(Request $request, $id)
     {
-       $data = $request->only(
-            'name',
-            'email',
-            'password',
-            'password_confirmation'
-       );
-
-        $validator = Validator::make($data, [
-            'name'=>['required', 'string', 'max:100'],
-            'email'=>['required', 'string', 'email', 'max:100'],
-        ]);
-
-     
-
         $user = User::find($id);
         
         if($user){
+
+            $data = $request->only(
+                'name',
+                'email',
+                'password',
+                'password_confirmation'
+           );
+    
+            $validator = Validator::make($data, [
+                'name'=>['required', 'string', 'max:100'],
+                'email'=>['required', 'string', 'email', 'max:100'],
+            ]);
             
             $user->name = $data['name'];
         
