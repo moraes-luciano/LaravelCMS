@@ -4,10 +4,24 @@ namespace App\Http\Controllers\Site;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Page;
 
 class HomeController extends Controller
 {
+    
+    
     public function index(){
-        return view('site.home');
+        $posts = Page::all();
+    
+        return view('site.home', ['posts'=>$posts]);
+
+    }
+
+
+    public function post($id){
+      
+        $post = Page::find($id);
+        return view('site.post',['post'=>$post]);
     }
 }
+

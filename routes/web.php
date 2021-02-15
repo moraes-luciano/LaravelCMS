@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/','site\HomeController@index');
 
+
+Route::get('/','site\HomeController@index')->name('home');
+Route::get('/artigo/{id}', 'site\HomeController@post');
 
 Route::prefix('painel')->group(function(){
 
@@ -37,7 +39,6 @@ Route::prefix('painel')->group(function(){
     Route::get('settings', 'Admin\SettingController@index')->name('settings');
     Route::put('settingssave', 'Admin\SettingController@save')->name('settings.save');
 
-
-    
-
 });
+
+

@@ -1,0 +1,49 @@
+body{
+    margin:0 0;
+    background-color: #ECECEC;
+}
+h1{
+    margin: 0 0;
+}
+.container{
+
+    background: 
+        linear-gradient(177deg, rgba(160,156,238,0.8)0%, rgba(0,212,255,0.8)72%, rgba(134,255,215,0.8)100%),
+        url("/assets/images/cover.jpg") no-repeat center; 
+    background-size: cover;
+    background-position: center;
+    width: 100vw;
+    height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+.container-item{
+    width: 50vw;
+    margin: auto;
+}
+
+.container-item button{
+    width: 120px;
+    padding: 10px 0;
+    margin: 10px;
+    border-radius: 10px;
+    border: none;
+    box-shadow: 0 8px 6px -6px black;
+}
+
+.post-container{
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+    margin: auto;
+    
+}
+.post-item{
+    width: 100%;
+    padding: 25px 50px;
+    margin: 50px auto;
+    box-shadow:0 0 20px rgba(0,0,0,0.8);
+    border-radius:15px
+}
