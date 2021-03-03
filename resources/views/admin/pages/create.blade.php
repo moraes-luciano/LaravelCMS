@@ -1,5 +1,11 @@
 @extends('adminlte::page')
 
+@section('css')
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.css" rel="stylesheet">
+@stop
+
+
+
 @section('title','Nova Página')
 
 @section('content_header')
@@ -41,11 +47,9 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Corpo</label>
                     <div class="col-sm-10">
-                        <textarea name="body" class="form-control bodyfield">{{old('body')}}</textarea>
+                        <textarea id="summernote" name="body" class="form-control bodyfield">{{old('body')}}</textarea>
                     </div>
-                </div>
-        
-        
+                </div>      
                 
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label"></label>
@@ -59,31 +63,30 @@
         </div>
 
     </div>
-
-
-    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
-    <script>
-        tinymce.init({
-            selector:'textarea.bodyfield',
-            height:300,
-            menubar:false,
-            plugins:['link','table','image','autoresize','lists'],
-            toolbar:['undo redo | formatselect | bold italic backcolor |alignleft aligncenter alignright alignjustify | table | link image | bullist numlist'],
-            content_css:[
-                '{{asset('assets/css/content.css')}}',
-            ],
-            images_upload_url:'{{route('imageupload')}}',
-            images_upload_credentials:true,
-            convert_urls:false,
-             
-        });
-
-    </script>
-
     
-
-
-
+    @section('js')
+        
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
+        <script src={{asset("/assets/js/langs/summernote-pt-BR.js")}}></script>
+        <script>
+            $(document).ready(function() {
+                $('#summernote').summernote({
+                    toolbar: [
+                    // [groupName, [list of button]]
+                        ['misc',['undo','redo']],
+                        ['style', ['bold', 'italic', 'underline', 'clear']],
+                        ['fontsize', ['fontsize']],
+                        ['color', ['color']],
+                        ['para', ['ul', 'ol', 'paragraph']],
+                        ['height', ['height']],
+                        ['insert',['link','picture','table','video']],
+                    ],
+                    lang: 'pt-BR'
+                });
+            });
+            
+        </script>
+    @stop
     
 @endsection
     

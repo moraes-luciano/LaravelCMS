@@ -12,7 +12,8 @@ class HomeController extends Controller
     
     public function index(){
         $posts = Page::all();
-    
+        $posts = Page::orderBy('id', 'desc')->take(7)->get();
+       
         return view('site.home', ['posts'=>$posts]);
 
     }

@@ -12,10 +12,10 @@
     <div class="post-container">
         <div class="post-item">
             <div class="post-title">
-                <h1>{{$post->title}}</h1>
+                <h1>{!!$post->title!!}</h1>
             </div>
             <div class="post-body">
-                <p>{{$post->body}}</p>
+                <p>{!!$post->body!!}</p>
             </div>
         </div>
     </div>

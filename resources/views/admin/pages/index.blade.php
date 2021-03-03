@@ -30,7 +30,7 @@
                             <td>{{$page->id}}</td>
                             <td>{{$page->title}}</td>
                             <td>
-                                <a href="" target="_blank" class="btn btn-sm btn-success">Ver</a>
+                                <a href="/" target="_blank" class="btn btn-sm btn-success">Ver</a>
 
                                 <a href="{{route('pages.edit',['page'=>$page->id])}}" class="btn btn-sm btn-info">Editar</a>
                                 
@@ -52,7 +52,7 @@
 
    
     
-    {{$pages->links()}}
+    {{$pages->links('pagination::bootstrap-4')}}
 
 
 @endsection

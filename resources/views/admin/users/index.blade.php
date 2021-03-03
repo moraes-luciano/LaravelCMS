@@ -52,7 +52,7 @@
 
    
     
-    {{$users->links()}}
+    {{$users->links(('pagination::bootstrap-4')}}
 
 
 @endsection

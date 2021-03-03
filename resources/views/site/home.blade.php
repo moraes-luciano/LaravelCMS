@@ -27,11 +27,11 @@
             <div class="post-item">
                 <a href="/artigo/{{$post->id}}">
                     <div class="post-head">
-                        <h1>{{$post->title}}</h1>
+                        <h1>{!!$post->title!!}</h1>
                     </div>
 
                     <div class="post-body">
-                        <p>{{$post->body}}</p>
+                        <p>{!!$post->body!!}</p>
                     </div>
                 </a>
             </div>
@@ -39,6 +39,6 @@
         @endforeach
     
     </div>
-    
+    {{-- {{ $posts->links('pagination::bootstrap-4') }} --}}
 </body>
 </html>
