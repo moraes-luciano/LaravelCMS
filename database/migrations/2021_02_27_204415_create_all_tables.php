@@ -4,6 +4,9 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Hash;
+
 class CreateAllTables extends Migration
 {
     /**
@@ -40,7 +43,23 @@ class CreateAllTables extends Migration
             $table->string('ip',100);
             $table->dateTime('date_access',6);
             $table->string('page',100);
-        });
+        });   
+
+        DB::table('users')->insert([
+            'name' =>'admin',
+            'email' =>'admin@admin.com',
+            'password'=>Hash::make('1234'),
+            'remember_token'=>'',
+            'admin'=>1,
+        ]);
+
+        DB::table('users')->insert([
+            'name' =>'user',
+            'email' =>'user@user.com',
+            'password'=>Hash::make('1234'),
+            'remember_token'=>'',
+            'admin'=>0,
+        ]);
     }
 
     /**

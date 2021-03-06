@@ -45,7 +45,16 @@ h1{
     padding: 25px 50px;
     margin: 50px auto;
     box-shadow:0 0 20px rgba(0,0,0,0.8);
-    border-radius:15px
+    border-radius:15px;
 }
 
+.post-item a{
+    text-decoration: none;
+    color: black;
+}
 
+.post-body{
+    width: 100%;
+    overflow: hidden;
+    
+}

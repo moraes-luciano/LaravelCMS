@@ -252,17 +252,22 @@ return [
             'can'         =>  'edit-users',  
         ],
         ['header' => 'account_settings'],
-        [
-            'text'        =>'Configurações',
-            'url'         =>'painel/settings',
-            'icon'        =>'fas fa-fw fa-file'
-        ],
+        // [
+        //     'text'        =>'Configurações',
+        //     'url'         =>'painel/settings',
+        //     'icon'        =>'fas fa-fw fa-file'
+        // ],
         [
             'text'        =>'Meu Perfil',
             'url'         =>'painel/profile',
             'icon'        =>'fas fa-fw fa-user'
-        ]
-    
+        ],
+        ['header' => 'Blog_HomePage'],
+        [
+            'text'        =>'Blog',
+            'url'         =>'/',
+            'icon'        =>'fas fa-fw fa-file'
+        ],
         
     ],
 

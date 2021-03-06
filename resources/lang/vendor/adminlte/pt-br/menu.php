@@ -16,4 +16,5 @@ return [
     'Important'                     => 'Importante',
     'Warning'                       => 'Aviso',
     'Information'                   => 'Informação',
+    'Blog_HomePage'                 => 'Blog - Página Inicial',
 ];

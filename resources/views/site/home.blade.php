@@ -10,13 +10,26 @@
 <body>
     <div class="container">
         <div class="container-item">
-            <h1>Bem vindo!</h1>
-            <h3>Este é um protótipo de blog com CMS integrado.
+           
+            @if(Auth::guest())
+                <h1>Bem vindo!</h1>
+                <h3>Este é um protótipo de blog com CMS integrado.
+                    <br><br>
+                    Teste seu painel de recursos!
+                    <a href= "{{route('login')}}"><button>Login</button></a>
+                    <a href="{{route('register')}}"><button>Cadastrar</button></a>
+                </h3>   
+            @else
+                <h1>Bem vindo, </h1> 
+                <h1> {{$userName}}!</h1>
                 <br><br>
-                Teste seu painel de recursos!
-                <a href= "{{route('login')}}"><button>Login</button></a>
-                <a href="{{route('register')}}"><button>Cadastrar</button></a>
-            </h3>
+                <h3>Este é um protótipo de blog com CMS integrado.
+                    <br><br>
+                    Teste seu painel de recursos!
+                    <a href="{{route('admin')}}"><button>Dashboard</button></a>
+                </h3>      
+            @endif
+            
         </div>  
     </div>
 
@@ -40,5 +53,15 @@
     
     </div>
     {{-- {{ $posts->links('pagination::bootstrap-4') }} --}}
+
+        
+    <script src={{asset('assets/js/clamp.js')}}></script>
+    <script>
+        var posts = document.getElementsByClassName("post-body");
+        for(i=0;i<posts.length;i++){
+            $clamp(posts[i], {clamp: 3});
+        }
+        
+    </script>
 </body>
 </html>

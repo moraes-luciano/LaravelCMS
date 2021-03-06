@@ -10,6 +10,10 @@
 <body>
 
     <div class="post-container">
+        <div>
+            <button class="Blog-button"><a href="/">Blog</a></button>
+            <button class="Dashboard-button"><a href="/painel">Dashboard </a></button>
+        </div>
         <div class="post-item">
             <div class="post-title">
                 <h1>{!!$post->title!!}</h1>
@@ -19,7 +23,9 @@
             </div>
         </div>
     </div>
-    
+
 </body>
+
+
 </html>
 
