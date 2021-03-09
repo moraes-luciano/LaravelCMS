@@ -20,7 +20,7 @@ class HomeController extends Controller
         if(Auth::user()){
             $userName = Auth::user()->name;
         }
-       
+
         return view('site.home', ['posts'=>$posts, 'userName'=>$userName]);
         
        

@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="{{asset('assets/css/content.css')}}">
+    <link rel="stylesheet" href="{{asset('assets/css/home.css')}}">
     <title>Laravel_Blog CMS</title>
 </head>
 <body>
@@ -57,8 +57,19 @@
         
     <script src={{asset('assets/js/clamp.js')}}></script>
     <script>
-        var posts = document.getElementsByClassName("post-body");
+        let cardNumberLines = 3;
+        let posts = document.getElementsByClassName("post-body");
+        
         for(i=0;i<posts.length;i++){
+            
+            let checkLineForImg = posts[i].getElementsByTagName("img");
+            
+            if(checkLineForImg.length !=0){
+                let thisLine = posts[i].querySelector('p img').closest('p');
+                thisLine.style.display="none";
+                
+            }
+            
             $clamp(posts[i], {clamp: 3});
         }
         

@@ -65,30 +65,50 @@
 
     </div>
 
-    @section('js')
-        
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.9/summernote-bs4.js"></script>
-        <script src={{asset("/assets/js/langs/summernote-pt-BR.js")}}></script>
-        <script>
-            $(document).ready(function() {
-                $('#summernote').summernote({
-                    toolbar: [
-                    // [groupName, [list of button]]
-                        ['misc',['undo','redo']],
-                        ['style', ['bold', 'italic', 'underline', 'clear']],
-                        ['fontsize', ['fontsize']],
-                        ['color', ['color']],
-                        ['para', ['ul', 'ol', 'paragraph']],
-                        ['height', ['height']],
-                        ['insert',['link','picture','table','video']],
-                    ],
-                    lang: 'pt-BR'
-                });
-            });
-            
-        </script>
-    @stop
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js"></script>
+    <script>
+        tinymce.init({
+            selector:'textarea.bodyfield',
+            language: 'pt_BR',
+            height:300,
+            menubar:false,
+            plugins:['link','table','image','autoresize','lists'],
+            toolbar:['undo redo | styleselect | bold italic underline backcolor | fontsizeselect |alignleft aligncenter alignright alignjustify | table | link image | bullist numlist'],
+            content_css:[
+                '{{asset('assets/css/home.css')}}',
+            ],
+            images_upload_url:'{{route('imageupload')}}',
+            images_upload_credentials:true,
+            convert_urls:false,
+            entity_encoding: 'raw',
 
+            style_formats: [
+                { title: "Texto"},
+                { title: "Title", block: "h1" },
+                { title: "Paragraph", block: "p" },
+                { title: "Media & Texto"},
+                {
+                    title: 'Texto à Esquerda',
+                    selector: 'img',
+                    styles: {
+                        'float': 'left', 
+                        'margin': '0 10px 0 10px'
+                    }
+                },
+                {
+                    title: 'Texto à Direita',
+                    selector: 'img', 
+                    styles: {
+                        'float': 'right', 
+                        'margin': '0 0 10px 10px'
+                    }
+                }
+            ],
+
+            fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt 48pt 54pt 62pt 68pt 72pt",
+             
+        });
+    </script>
 
 @endsection
     
