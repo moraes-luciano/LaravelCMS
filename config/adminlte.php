@@ -241,7 +241,7 @@ return [
             'icon'        => 'far fa-fw fa-file',
         ],
         [
-            'text'        => 'Minhas páginas',
+            'text'        => 'Meus Posts',
             'url'         => 'painel/pages',
             'icon'        => 'far fa-fw fa-file',
         ],

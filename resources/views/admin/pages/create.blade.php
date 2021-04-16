@@ -4,7 +4,7 @@
 
 @section('content_header')
 
-    <h1>Nova Página</h1>
+    <h1>Novo Post</h1>
     
 @endsection
 
@@ -41,7 +41,7 @@
                 <div class="form-group row">
                     <label class="col-sm-2 col-form-label">Corpo</label>
                     <div class="col-sm-10">
-                        <textarea name="body" class="form-control bodyfield">{{old('body')}}</textarea>
+                        <textarea id ="tinymce" name="body" class="form-control bodyfield">{{old('body')}}</textarea>
                     </div>
                 </div>      
                 
@@ -65,15 +65,16 @@
             language: 'pt_BR',
             height:300,
             menubar:false,
-            plugins:['link','table','image','autoresize','lists'],
-            toolbar:['undo redo | styleselect | bold italic underline backcolor | fontsizeselect |alignleft aligncenter alignright alignjustify | table | link image | bullist numlist'],
+            plugins:['link','paste','table','image','autoresize','lists'],
+            toolbar:['undo redo | styleselect | bold italic underline backcolor | fontselect fontsizeselect |alignleft aligncenter alignright alignjustify | table | link image | bullist numlist'],
+            font_formats: "Andale Mono=andale mono,times; Arial=arial,helvetica,sans-serif; Book Antiqua=book antiqua,palatino; Comic Sans MS=comic sans ms,sans-serif; Georgia=georgia,palatino; Sans Serif=sans-serif; Times New Roman=times new roman,times; Verdana=verdana",
+
             content_css:[
                 '{{asset('assets/css/home.css')}}',
             ],
             images_upload_url:'{{route('imageupload')}}',
             images_upload_credentials:true,
             convert_urls:false,
-            entity_encoding: 'raw',
 
             style_formats: [
                 { title: "Texto"},

@@ -26,7 +26,6 @@ class HomeController extends Controller
         // $ipAddress = $request->ip();
 
     
-
         //Contagem de Visitantes
         if($interval > 15){
             $interval = 15;
@@ -63,15 +62,14 @@ class HomeController extends Controller
         $pageLabels = json_encode(array_keys($pagePie));
         $pageValues = json_encode(array_values($pagePie));
         
-        return view('admin.home',[
+        return view('admin.home', [
             'visitsCount' => $visitsCount,
             'onlineCount' => $onlineCount,
             'pageCount' => $pageCount,
             'userCount' => $userCount,  
             'pageLabels' => $pageLabels,
             'pageValues' => $pageValues,
-            'dateInterval' => $interval,
-
+            'dateInterval' => $interval
         ]);
     }
 }

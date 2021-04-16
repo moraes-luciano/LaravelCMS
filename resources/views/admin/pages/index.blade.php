@@ -5,8 +5,8 @@
 @section('content_header')
 
     <h1>
-        Minhas Páginas
-        <a href="{{route('pages.create')}}" class="btn btn-sm btn-success">Nova Página</a>
+        Meus Posts
+        <a href="{{route('pages.create')}}" class="btn btn-sm btn-success">Novo Post</a>
     </h1>
     
 @endsection

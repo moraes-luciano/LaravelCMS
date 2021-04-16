@@ -10,7 +10,7 @@
 <body>
 
     <div class="post-container">
-        <div>
+        <div class="menu-buttons">
             <a href="/"><button class="blog-button">Blog</button></a>
             <a href="/painel"><button class="dashboard-button">Dashboard</button></a>
         </div>
