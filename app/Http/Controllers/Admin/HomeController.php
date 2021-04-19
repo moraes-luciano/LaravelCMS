@@ -30,12 +30,21 @@ class HomeController extends Controller
         if($interval > 15){
             $interval = 15;
         }
-        $dateInterval = date('Y-m-d H:i:s', strtotime('-'.$interval.'days')); // = concatenação de -5minutes logo abaixo em usuários online
+        //Para mostar os visitantes dos ultimos 15 dias
+        //$dateInterval = date('Y-m-d H:i:s', strtotime('-'.$interval.'days')); 
+
+        // Para o uso, trocar pelo comando equivalente acima
+        $dateInterval = date('Y-m-d H:i:s', strtotime('-'.$interval.'years')); 
         $visitsCount = Visitor::where('date_access', '>=',$dateInterval)->count();
 
 
         //Contagem de Usuários Online
-        $dateLimit = date('Y-m-d H:i:s', strtotime('-5 minutes'));
+        
+        // Para estimar em cinco minutos 
+        // $dateLimit = date('Y-m-d H:i:s', strtotime('-5 minutes'));
+
+        // Apenas para demonstrar a funcionalidade, para o uso trocar para o comando equivalente acima
+        $dateLimit = date('Y-m-d H:i:s', strtotime('-5 years'));
         $onlineList = Visitor::select('ip')->where('date_access','>=',$dateLimit)->groupBy('ip')->get();
         $onlineCount = count($onlineList);
 

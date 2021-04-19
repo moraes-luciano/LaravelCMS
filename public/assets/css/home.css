@@ -81,8 +81,9 @@ h1{
     
 }
 
-
-
+#tinymce{
+    padding: 20px !important; 
+}
 @media (max-width: 700px){
     .container-item,.post-container{
         width: 95%;

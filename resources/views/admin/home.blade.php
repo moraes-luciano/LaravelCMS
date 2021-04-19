@@ -112,7 +112,9 @@
                 </div>
 
                 <div class="card-body">
-                    ...
+                    Este é um CMS desenvolvido durante o curso de Laravel com a B7Web, com ele é possível criar posts reais com um editor de texto richText e a possibilidade de incluir fotos. 
+                    Ele possui dois tipos de contas, uma de admin com acesso total ao CMS e outra de usuário com acesso parcial das funcionalidades. 
+                    Além disso, ele já está preparado para receber a integração com diferentes funcionalidades do admin-lte.
 
                 </div>
             </div>

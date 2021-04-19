@@ -71,6 +71,7 @@
             selector:'textarea.bodyfield',
             language: 'pt_BR',
             height:300,
+            padding:20,
             menubar:false,
             plugins:['link', 'paste','table','image','autoresize','lists'],
             toolbar:['undo redo | styleselect | bold italic underline backcolor | fontselect fontsizeselect |alignleft aligncenter alignright alignjustify | table | link image | bullist numlist'],
@@ -78,7 +79,6 @@
             fontsize_formats: "8pt 10pt 12pt 14pt 18pt 24pt 36pt 48pt 54pt 62pt 68pt 72pt",
             content_css:[
                 '{{asset('assets/css/home.css')}}',
-                
             ],
             images_upload_url:'{{route('imageupload')}}',
             images_upload_credentials:true,
