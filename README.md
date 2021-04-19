@@ -25,6 +25,8 @@ Este é um CMS desenvolvido durante o curso de Laravel com a B7Web, com ele é p
 
 Banco de Dados: O arquivo está disponibilizado com o nome laravelcms.sql no diretório principal.
 
+A conta admin já está criada, para fazer login digite: admin@admin.com e senha admin
+
 ```bash
 
   # clonar repositório
